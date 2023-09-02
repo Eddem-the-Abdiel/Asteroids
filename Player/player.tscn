@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr0e5u4b23b1n"]
+
+[ext_resource type="Texture2D" uid="uid://c36xtcms1om8j" path="res://Player/nave.png" id="1_kqxu1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5ita"]
+height = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_g5ita")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kqxu1")
