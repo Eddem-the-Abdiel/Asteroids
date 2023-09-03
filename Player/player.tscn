@@ -1,14 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr0e5u4b23b1n"]
+[gd_scene load_steps=4 format=3 uid="uid://cr0e5u4b23b1n"]
 
 [ext_resource type="Texture2D" uid="uid://c36xtcms1om8j" path="res://Player/nave.png" id="1_kqxu1"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_ogtfp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5ita"]
 height = 32.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ogtfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g5ita")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kqxu1")
+
+[node name="muzzle" type="Node2D" parent="."]
+position = Vector2(0, -19)
