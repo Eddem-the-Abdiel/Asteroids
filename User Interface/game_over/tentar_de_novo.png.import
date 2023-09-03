@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nqjykupotlye"
-path="res://.godot/imported/tentar_de_novo.png-b791d7b190fd41f29bf56052bef1e06e.ctex"
+path="res://.godot/imported/tentar_de_novo.png-ff1a1ceb68da520e5d5f869b14b85c8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/tentar_de_novo.png"
-dest_files=["res://.godot/imported/tentar_de_novo.png-b791d7b190fd41f29bf56052bef1e06e.ctex"]
+source_file="res://User Interface/game_over/tentar_de_novo.png"
+dest_files=["res://.godot/imported/tentar_de_novo.png-ff1a1ceb68da520e5d5f869b14b85c8d.ctex"]
 
 [params]
 

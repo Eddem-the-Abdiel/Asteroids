@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w78vttrkym5p"
-path="res://.godot/imported/retomar.png-39a815a77cfbfbdd0b13e2dcd739a52e.ctex"
+uid="uid://csgn71qifhulc"
+path="res://.godot/imported/game_over.png-cbed2530466b2baf46c7c34c10100dce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/retomar.png"
-dest_files=["res://.godot/imported/retomar.png-39a815a77cfbfbdd0b13e2dcd739a52e.ctex"]
+source_file="res://User Interface/game_over/game_over.png"
+dest_files=["res://.godot/imported/game_over.png-cbed2530466b2baf46c7c34c10100dce.ctex"]
 
 [params]
 
