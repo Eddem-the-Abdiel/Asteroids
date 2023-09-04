@@ -1,19 +1,37 @@
 extends Control
 
-@onready var score_label: Label = $MarginContainer/Hbox_score/Points
+@onready var score_label: Label = $MarginContainer/VBoxContainer/Score_text
+@onready var lifes = $MarginContainer/VBoxContainer/Lifes
 
-var score = 200
+var ui_life_scene = preload("res://User Interface/Hud/life_heart.tscn")
+
+var score = 0
 
 func _ready():
-	update_score()
+	#init_lifes(3)
+	pass
 	
-func update_score() -> void:
+func update_score(points) -> void:
 	#a variável score tem que ser convertida em string para se evitar erros
-	score_label.text = str(score)
-	pass
+	score += points
+	score_label.text = str("Score: " + str(score))
 
-func update_lifes() -> void:
-	pass
+func init_lifes(amount)-> void:
+	for ui_hearts in lifes.get_children():
+		ui_hearts.queue_free()
+	for itens in amount:
+		var ui_life = ui_life_scene.instantiate()
+		lifes.add_child(ui_life)
 	
-func on_points_updated() -> void:
-	pass
+func on_points_updated(asteroid_size) -> void:
+	var gained_points = 0
+	match asteroid_size:
+		"BIG_ASTEROID":
+			print("haki do hud")
+			gained_points = 100
+		"SMALL_ASTEROID":
+			print("haki do hud menor")
+			gained_points = 150
+			
+	update_score( gained_points)
+	

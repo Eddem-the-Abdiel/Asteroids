@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmdv2mng6dohy"]
+[gd_scene load_steps=6 format=3 uid="uid://bmdv2mng6dohy"]
 
 [ext_resource type="Texture2D" uid="uid://dxll1f8h87mdb" path="res://MainGame/Background.png" id="1_66phv"]
 [ext_resource type="Script" path="res://MainGame/main_game.gd" id="1_ri838"]
 [ext_resource type="PackedScene" uid="uid://ji66kc3r3evj" path="res://asteroids/asteroid.tscn" id="2_cn1gv"]
 [ext_resource type="PackedScene" uid="uid://cr0e5u4b23b1n" path="res://Player/player.tscn" id="2_j4ew2"]
 [ext_resource type="PackedScene" uid="uid://d4hm6i60a34w7" path="res://User Interface/Interface.tscn" id="4_t1x8q"]
-[ext_resource type="PackedScene" uid="uid://sve4kpw6ao0m" path="res://Player/shot.tscn" id="5_sdi1g"]
 
 [node name="Main_game" type="Node2D"]
 script = ExtResource("1_ri838")
+metadata/_edit_horizontal_guides_ = []
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(224, 125)
@@ -19,12 +19,10 @@ position = Vector2(288, 162)
 
 [node name="Player" parent="." instance=ExtResource("2_j4ew2")]
 position = Vector2(195, 114)
-rotation = 2.36087
 
 [node name="Interface" parent="." instance=ExtResource("4_t1x8q")]
 
-[node name="Shot" parent="." instance=ExtResource("5_sdi1g")]
-position = Vector2(235, 39)
-rotation = 3.71924
-
 [node name="Laser" type="Node" parent="."]
+
+[node name="Player_respawn_pos" type="Node2D" parent="."]
+position = Vector2(193, 110)
