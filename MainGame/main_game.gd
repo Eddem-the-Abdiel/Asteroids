@@ -25,7 +25,6 @@ func update_hud_score(size_of_asteroid):
 func on_player_death()->void:
 	player.player_life -= 1
 	update_ui_life()
-	print(player.player_life)
 	if player.player_life <= 0:
 		await get_tree().create_timer(2).timeout
 		game_over.visible = true
@@ -34,7 +33,6 @@ func on_player_death()->void:
 		player.respawn(player_respawn_pos.global_position)
 
 func update_ui_life()->void:
-	print(player.player_life)
 	hud.init_lifes(player.player_life)
 	
 	

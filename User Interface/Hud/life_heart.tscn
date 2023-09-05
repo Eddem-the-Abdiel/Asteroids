@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bd8x2bs537agq"]
 
-[ext_resource type="Texture2D" uid="uid://3ro1uaas87sn" path="res://User Interface/Hud/heart.png" id="1_qgjpb"]
+[ext_resource type="Texture2D" uid="uid://c8bll7c4ck7qq" path="res://User Interface/Hud/heart_line.png" id="1_rjd46"]
 
 [node name="Sprite2D" type="TextureRect"]
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("1_qgjpb")
+texture = ExtResource("1_rjd46")

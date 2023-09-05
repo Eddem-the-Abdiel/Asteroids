@@ -13,8 +13,9 @@ signal player_died
 @onready var muzzle : Node2D = $muzzle
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var collision_shape: = $CollisionShape2D
+@onready var timer = $Timer
 
-var player_life : int = 6
+var player_life : int = 3
 var laser_scene : = preload("res://Player/shot.tscn")
 var shot_cool_down : bool = false
 var rate_of_fire: float = 0.25
@@ -66,20 +67,26 @@ func shot_laser()->void:
 
 func player_death()->void:
 	if is_alive == true:
-		collision_shape.disabled = true
 		is_alive = false
 		emit_signal("player_died")
 		sprite.visible = false
-		#collision_shape.set_deferred("disabled", true)
 		process_mode = Node.PROCESS_MODE_DISABLED
-
 
 func respawn( pos )-> void:
 	global_position = pos
 	is_alive = true
 	sprite.visible = true
-	print("voltou")
+	start_invincibility()
 	velocity = Vector2.ZERO
-	collision_shape.disabled = false
-	collision_shape.set_deferred("disabled", false)
 	process_mode = Node.PROCESS_MODE_INHERIT
+	
+func start_invincibility()->void:
+	var invincible_time = 0.7
+	collision_shape.disabled = true
+	timer.wait_time = invincible_time
+	timer.start()
+	#print("torna o player invencível")
+
+func _on_timer_timeout() -> void:
+	#print("player pode morrer")
+	collision_shape.set_deferred("disabled", false)

@@ -9,5 +9,4 @@ func _on_asteroid_area_entered(area):
 func _on_body_entered(body):
 	if body is Player:
 		var player = body
-		print("playerdied")
 		player.player_death()

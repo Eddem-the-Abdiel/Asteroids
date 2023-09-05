@@ -6,10 +6,6 @@ extends Control
 var ui_life_scene = preload("res://User Interface/Hud/life_heart.tscn")
 
 var score = 0
-
-func _ready():
-	#init_lifes(3)
-	pass
 	
 func update_score(points) -> void:
 	#a variável score tem que ser convertida em string para se evitar erros
@@ -27,10 +23,13 @@ func on_points_updated(asteroid_size) -> void:
 	var gained_points = 0
 	match asteroid_size:
 		"BIG_ASTEROID":
-			print("haki do hud")
+			#print("haki do hud")
 			gained_points = 100
+		"MEDIUM_ASTEROID":
+			print("medium asteroid")
+		
 		"SMALL_ASTEROID":
-			print("haki do hud menor")
+			#print("haki do hud menor")
 			gained_points = 150
 			
 	update_score( gained_points)
