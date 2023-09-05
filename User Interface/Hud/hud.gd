@@ -20,17 +20,18 @@ func init_lifes(amount)-> void:
 		lifes.add_child(ui_life)
 	
 func on_points_updated(asteroid_size) -> void:
-	var gained_points = 0
-	match asteroid_size:
-		"BIG_ASTEROID":
-			#print("haki do hud")
+	var gained_points : int = 0
+	match str(asteroid_size):
+		"0":
+			#LARGE ASTEROID
 			gained_points = 100
-		"MEDIUM_ASTEROID":
-			print("medium asteroid")
-		
-		"SMALL_ASTEROID":
-			#print("haki do hud menor")
+		"1":
+			#MEDIUM ASTEROID
 			gained_points = 150
+		"2":
+			#SMALL ASTEROID
+			gained_points = 200
+			
 			
 	update_score( gained_points)
 	

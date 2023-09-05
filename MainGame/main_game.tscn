@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmdv2mng6dohy"]
+[gd_scene load_steps=7 format=3 uid="uid://bmdv2mng6dohy"]
 
 [ext_resource type="Texture2D" uid="uid://dxll1f8h87mdb" path="res://MainGame/Background.png" id="1_66phv"]
 [ext_resource type="Script" path="res://MainGame/main_game.gd" id="1_ri838"]
 [ext_resource type="PackedScene" uid="uid://ji66kc3r3evj" path="res://asteroids/asteroid.tscn" id="2_cn1gv"]
 [ext_resource type="PackedScene" uid="uid://cr0e5u4b23b1n" path="res://Player/player.tscn" id="2_j4ew2"]
 [ext_resource type="PackedScene" uid="uid://d4hm6i60a34w7" path="res://User Interface/Interface.tscn" id="4_t1x8q"]
+[ext_resource type="PackedScene" uid="uid://bu6es5fucrj1d" path="res://MainGame/player_spawn_area.tscn" id="5_k0iqy"]
 
 [node name="Main_game" type="Node2D"]
 script = ExtResource("1_ri838")
@@ -14,15 +15,39 @@ metadata/_edit_horizontal_guides_ = []
 position = Vector2(224, 125)
 texture = ExtResource("1_66phv")
 
-[node name="Asteroid" parent="." instance=ExtResource("2_cn1gv")]
-position = Vector2(92, 103)
-
 [node name="Player" parent="." instance=ExtResource("2_j4ew2")]
-position = Vector2(195, 114)
+position = Vector2(219, 125)
 
 [node name="Interface" parent="." instance=ExtResource("4_t1x8q")]
 
 [node name="Laser" type="Node" parent="."]
 
-[node name="Player_respawn_pos" type="Node2D" parent="."]
-position = Vector2(193, 110)
+[node name="Player_spawn_pos" type="Node2D" parent="."]
+position = Vector2(219, 129)
+metadata/_edit_group_ = true
+
+[node name="Player_spawn_area" parent="Player_spawn_pos" instance=ExtResource("5_k0iqy")]
+
+[node name="Asteroids" type="Node" parent="."]
+
+[node name="Asteroid" parent="Asteroids" instance=ExtResource("2_cn1gv")]
+position = Vector2(76, 193)
+rotation = 2.56275
+
+[node name="Asteroid2" parent="Asteroids" instance=ExtResource("2_cn1gv")]
+position = Vector2(391, 133)
+rotation = 2.56275
+size = 1
+
+[node name="Asteroid3" parent="Asteroids" instance=ExtResource("2_cn1gv")]
+position = Vector2(76, 45)
+rotation = 2.56275
+
+[node name="Asteroid4" parent="Asteroids" instance=ExtResource("2_cn1gv")]
+position = Vector2(396, 33)
+rotation = 2.56275
+
+[node name="Asteroid5" parent="Asteroids" instance=ExtResource("2_cn1gv")]
+position = Vector2(336, 234)
+rotation = 2.56275
+size = 2
